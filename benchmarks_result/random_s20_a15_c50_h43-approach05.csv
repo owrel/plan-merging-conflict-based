@@ -1,0 +1,7 @@
+Step Name;Total Time;Ground Time;Solving Time;SAT;Additional Data
+base_ipf;0.5967850685119629;0.3015725612640381;0.2952125072479248;True;"{""npaths"": 215.0, ""use_optimization"": false, ""horizon_modifier"": 0, ""additional_paths_computation"": true, ""additional_paths_horizon_modifier"": 2, ""nagent"": 15}"
+heatmaps;0.43102383613586426;0.43102383613586426;0;True;{}
+simple_threshold;0.00852346420288086;0.00852346420288086;0;True;"{""ncritical_vertex"": 39, ""bias"": 1}"
+path_elimination;0.21606802940368652;0.13477802276611328;0.08129000663757324;True;{}
+path_selection;0.21591496467590332;0.1308610439300537;0.08505392074584961;True;{}
+partial_solving;3.714491128921509;3.41566801071167;0.29882311820983887;True;"{""horizon"": 43, ""ngoal_reached"": 15, ""subgraph"": ""mapf/subgraph.lp"", ""precomputed_path"": false, ""nagent"": 15}"
