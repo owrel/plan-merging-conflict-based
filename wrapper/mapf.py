@@ -7,6 +7,7 @@ def mapf(
         horizon: int = 15,
         npaths: int = 5,
         encoding: str = "mapf/base_mapf.lp",
+        horizon_modifier: int = 0,
         additional_encodings: list[str] = []):
     
     rx = re.search(r"makespan\(([0-9]+)\)\.", instance)
@@ -14,6 +15,8 @@ def mapf(
     if rx:
         horizon = int(rx.group(1))
 
+    horizon += horizon_modifier
+    
     ctl = clingo.Control(
         ["1", f"-c horizon={horizon}",
             f"-c npaths={npaths}", f"--seed={__seed}"]

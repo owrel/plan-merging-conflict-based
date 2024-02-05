@@ -1,0 +1,5 @@
+Step Name;Total Time;Ground Time;Solving Time;SAT;Additional Data
+base_mapf;2.4524168968200684;2.4052889347076416;0.04712796211242676;True;"{""horizon"": 68}"
+mapf_additional_horizon;2.675119161605835;2.623883008956909;0.05123615264892578;True;"{""horizon"": 69}"
+mapf_additional_horizon;2.7280988693237305;2.6709299087524414;0.05716896057128906;True;"{""horizon"": 71}"
+mapf_additional_horizon;3.1965110301971436;3.1182870864868164;0.07822394371032715;True;"{""horizon"": 73}"

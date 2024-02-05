@@ -1,0 +1,11 @@
+Step Name;Total Time;Ground Time;Solving Time;SAT;Additional Data
+base_ipf;0.43530774116516113;0.22412443161010742;0.2111833095550537;True;"{""npaths"": 315.0, ""use_optimization"": false, ""horizon_modifier"": 0, ""additional_paths_computation"": true, ""additional_paths_horizon_modifier"": 2, ""nagent"": 15}"
+heatmaps;0.3808910846710205;0.3808910846710205;0;True;{}
+select_portion_based_on_heatmap;0.00024127960205078125;0.00024127960205078125;0;True;{}
+path_elimination;0.14920997619628906;0.09633898735046387;0.052870988845825195;True;{}
+path_selection;0.16513419151306152;0.10787105560302734;0.05726313591003418;True;{}
+strategy;0.18668293952941895;0.12525010108947754;0.061432838439941406;True;{}
+partial_solving;1.9050021171569824;1.7685680389404297;0.13643407821655273;True;"{""horizon"": 21, ""ngoal_reached"": 15, ""subgraph"": ""mapf/subgraph.lp"", ""precomputed_path"": false, ""nagent"": 15}"
+partial_solving_additional_horizon;2.2192468643188477;2.0841879844665527;0.13505887985229492;True;"{""horizon"": 22, ""ngoal_reached"": 15, ""subgraph"": ""mapf/subgraph.lp"", ""precomputed_path"": false, ""nagent"": 15}"
+partial_solving_additional_horizon;2.6518478393554688;2.5061938762664795;0.14565396308898926;True;"{""horizon"": 24, ""ngoal_reached"": 15, ""subgraph"": ""mapf/subgraph.lp"", ""precomputed_path"": false, ""nagent"": 15}"
+partial_solving_additional_horizon;2.7357819080352783;2.5751280784606934;0.16065382957458496;True;"{""horizon"": 26, ""ngoal_reached"": 15, ""subgraph"": ""mapf/subgraph.lp"", ""precomputed_path"": false, ""nagent"": 15}"

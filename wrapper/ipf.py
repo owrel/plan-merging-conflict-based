@@ -1,4 +1,4 @@
-from .helper import OnFinish, __seed, Stats
+from .helper import OnFinish, __seed, Stats, read
 
 import clingo
 import re
@@ -33,7 +33,7 @@ def naive_ipf(
 
     ctl = clingo.Control(
         ["1", f"-c horizon={horizon}",
-            f"-c npaths={npaths}", f"--seed={__seed}"]
+            f"-c npaths={npaths}", f"--seed={__seed}", "--init-watches=rnd"]
     )
 
     ctl.load(encoding)
@@ -190,3 +190,66 @@ def base_ipf(
     }
 
     return "\n" + "\n".join(ret), stats
+
+
+
+
+
+def make_horizon(
+        instance_path: str,
+        encoding: str = "ipf/base_ipf.lp"):
+    horizon = re.search(r"horizon\(([0-9]+),([0-9]+)\)\.", read(instance_path))
+
+    
+    if horizon:
+        return
+    
+    ctl = clingo.Control(['1'])
+    ctl.load(instance_path)
+    ctl.ground([("base", [])])
+    agents = [agent.symbol.arguments[0].number for agent in ctl.symbolic_atoms.by_signature("agent", 1)]
+    ret = []
+    for agent_id in agents:
+        for horizon in (pbar := tqdm(range(1,100))):    
+            ctl = clingo.Control(['1', '--const', f'horizon={horizon}'])
+            ctl.load(encoding)
+            ctl.load(instance_path)
+            ctl.ground([("base", [])])
+
+            
+            [
+                (
+                    start_pos := clingo.Function(
+                        "at", [start.symbol.arguments[1], clingo.Number(0)]
+                    )
+                )
+                for start in ctl.symbolic_atoms.by_signature("start", 2)
+                if start.symbol.arguments[0].number == agent_id
+            ]
+
+            [
+                (
+                    goal_pos := clingo.Function(
+                        "at", [goal.symbol.arguments[1],
+                            clingo.Number(horizon)]
+                    )
+                )
+                for goal in ctl.symbolic_atoms.by_signature("goal", 2)
+                if goal.symbol.arguments[0].number == agent_id
+            ]
+
+            pbar.set_description(
+                f"Current agent: {agent_id} - {start_pos} => {goal_pos}")
+            om = OnModelNaiveIPF(agent_id)
+            of = OnFinish()
+            ctl.solve(
+                on_model=om, on_finish=of, assumptions=[
+                    (start_pos, True), (goal_pos, True)]
+            )
+            
+            if of.sat:
+                ret.append((agent_id,horizon))
+                break
+    
+    return ret
+    

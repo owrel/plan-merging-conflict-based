@@ -1,8 +1,11 @@
 Step Name;Total Time;Ground Time;Solving Time;SAT;Additional Data
-base_ipf;4.444478988647461;3.595363140106201;0.8491158485412598;True;"{""npaths"": 81.0, ""use_optimization"": false, ""horizon_modifier"": 0, ""additional_paths_computation"": false, ""additional_paths_horizon_modifier"": 2, ""nagent"": 10}"
-heatmaps;0.31528377532958984;0.31528377532958984;0;True;{}
-simple_threshold;0.0064771175384521484;0.0064771175384521484;0;True;"{""ncritical_vertex"": 1, ""bias"": 1}"
-path_elimination;0.2553088665008545;0.14850902557373047;0.10679984092712402;True;{}
-path_selection;0.252032995223999;0.14116692543029785;0.11086606979370117;True;{}
-strategy;0.27842211723327637;0.16535210609436035;0.11307001113891602;True;{}
-partial_solving;5.274890184402466;4.990925073623657;0.2839651107788086;True;"{""horizon"": 59, ""ngoal_reached"": 10, ""subgraph"": ""mapf/subgraph.lp"", ""precomputed_path"": false, ""nagent"": 10}"
+base_ipf;4.526573896408081;3.6531460285186768;0.8734278678894043;True;"{""npaths"": 81.0, ""use_optimization"": false, ""horizon_modifier"": 0, ""additional_paths_computation"": false, ""additional_paths_horizon_modifier"": 2, ""nagent"": 10}"
+heatmaps;0.3277573585510254;0.3277573585510254;0;True;{}
+simple_threshold;0.005991697311401367;0.005991697311401367;0;True;"{""ncritical_vertex"": 1, ""bias"": 1}"
+path_elimination;0.24788713455200195;0.13705706596374512;0.11083006858825684;True;{}
+path_selection;0.2574141025543213;0.14409303665161133;0.11332106590270996;True;{}
+strategy;0.2704131603240967;0.15715909004211426;0.11325407028198242;True;{}
+partial_solving;5.2783379554748535;5.001342058181763;0.2769958972930908;True;"{""horizon"": 59, ""ngoal_reached"": 10, ""subgraph"": ""mapf/subgraph.lp"", ""precomputed_path"": false, ""nagent"": 10}"
+partial_solving_additional_horizon;5.650544881820679;5.360132932662964;0.29041194915771484;True;"{""horizon"": 60, ""ngoal_reached"": 10, ""subgraph"": ""mapf/subgraph.lp"", ""precomputed_path"": false, ""nagent"": 10}"
+partial_solving_additional_horizon;6.1580729484558105;5.8662590980529785;0.29181385040283203;True;"{""horizon"": 62, ""ngoal_reached"": 10, ""subgraph"": ""mapf/subgraph.lp"", ""precomputed_path"": false, ""nagent"": 10}"
+partial_solving_additional_horizon;5.921715974807739;5.618648052215576;0.3030679225921631;True;"{""horizon"": 64, ""ngoal_reached"": 10, ""subgraph"": ""mapf/subgraph.lp"", ""precomputed_path"": false, ""nagent"": 10}"

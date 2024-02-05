@@ -11,7 +11,7 @@ def pretty_num(num):
     if "e-" in snum:
         return "> 0.0"
     if "." in snum:
-        return snum[: snum.index(".") + 5]
+        return snum[: snum.index(".") + 2]
     else:
         return snum
 
